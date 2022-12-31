@@ -77,7 +77,7 @@ module.exports = {
             await queue.addTracks(result.tracks)
             embed
                 .setDescription(`**${result.tracks.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue`)
-                .setThumbnail(playlist.thumbnail)
+                //.setThumbnail(playlist.thumbnail)
 
 		} 
         else if (interaction.options.getSubcommand() === "search") {
