@@ -45,20 +45,6 @@ client.on('guildCreate', (g) => {
     .catch(console.error);
 })
 
-function registerCommands() {
-    const guild_ids = client.guilds.cache.map(guild => guild.id);
-
-
-    const rest = new REST({version: '9'}).setToken(process.env.TOKEN);
-    for (const guildId of guild_ids)
-    {
-        rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, guildId), 
-            {body: commands})
-        .then(() => console.log('Successfully updated commands for guild ' + guildId))
-        .catch(console.error);
-    }
-}
-
 client.on("ready", () => {
     // Get all ids of the servers
     const guild_ids = client.guilds.cache.map(guild => guild.id);
